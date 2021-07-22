@@ -1,0 +1,23 @@
+{
+  "name": "homework-week-11-express.js-note-taker",
+  "version": "1.0.0",
+  "description": "UofO Homework for Week 11: Express.js Note Taker",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reidk361/Homework-Week-11-Express.js-Note-Taker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/reidk361/Homework-Week-11-Express.js-Note-Taker/issues"
+  },
+  "homepage": "https://github.com/reidk361/Homework-Week-11-Express.js-Note-Taker#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
