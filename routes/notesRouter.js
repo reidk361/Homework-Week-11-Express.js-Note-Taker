@@ -7,7 +7,7 @@ const getDate = require('../helpers/getDate');
 router.get('/', (req, res) => {
     console.info(`${req.method} request received for notes`);
     readFromFile('./db/notes.json').then((data) => res.json(JSON.parse(data)));
-  });
+});
 
 router.post('/', (req, res) => {
     console.info(`${req.method} request received to add a note`);
@@ -30,4 +30,3 @@ router.post('/', (req, res) => {
 });
 
 module.exports = router;
-
