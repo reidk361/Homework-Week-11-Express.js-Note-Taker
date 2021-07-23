@@ -1,13 +1,7 @@
-const express = require('express');
-const router = express.Router();
+const router =  require('express').Router();
 const { readFromFile, readAndAppend } = require('../helpers/fsUtils');
 const uuid = require('../helpers/uuid');
 const getDate = require('../helpers/getDate');
-
-// Middleware 
-router.use(express.json());
-router.use(express.urlencoded({ extended: true }));
-router.use(express.static('public'));
 
 router.get('/', (req, res) => {
     console.info(`${req.method} request received for notes`);

@@ -4,20 +4,19 @@ const express = require('express');
 const uuid = require('./helpers/uuid');
 const app = express();
 const path = require('path');
-const router = require('./routes/index');
+const api = require('./routes/index.js');
 
 const PORT = 8080;
 
 // Middleware 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use('/api', api);
 app.use(express.static('public'));
 
 app.get('/notes', (req, res) =>
   res.sendFile(path.join(__dirname, '/public/pages/notes.html'))
 );
-
-app.use('/api/notes', router);
 
 app.get('/*', (req, res) =>
   res.sendFile(path.join(__dirname, '/public/index.html'))
