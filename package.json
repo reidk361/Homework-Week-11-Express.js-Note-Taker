@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/reidk361/Homework-Week-11-Express.js-Note-Taker#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "utils": "^0.2.2"
   }
 }
