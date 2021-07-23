@@ -1,30 +1,33 @@
 const express = require('express');
 const router = express.Router();
 const { readFromFile, readAndAppend } = require('../helpers/fsUtils');
+const uuid = require('../helpers/uuid');
+const getDate = require('../helpers/getDate');
 
 router.get('/', (req, res) => {
-    console.info(`${req.method} request received for tips`);
-    readFromFile('./db/tips.json').then((data) => res.json(JSON.parse(data)));
+    console.info(`${req.method} request received for notes`);
+    readFromFile('./db/notes.json').then((data) => res.json(JSON.parse(data)));
   });
 
 router.post('/', (req, res) => {
-    console.info(`${req.method} request received to add a tip`);
+    console.info(`${req.method} request received to add a note`);
   
-    const { username, topic, tip } = req.body;
+    const { title, note } = req.body;
   
     if (req.body) {
-      const newTip = {
-        username,
-        tip,
-        topic,
-        tip_id: uuid(),
+      const newNote = {
+        title,
+        date: getDate(),
+        note,
+        note_id: uuid(),
       };
   
-      readAndAppend(newTip, './db/tips.json');
-      res.json(`Tip added successfully 🚀`);
+      readAndAppend(newNote, './db/db.json');
+      res.json(`Note added successfully.`);
     } else {
-      res.error('Error in adding tip');
+      res.error('Error in adding note. Please try again.');
     }
 });
 
 module.exports = router;
+
