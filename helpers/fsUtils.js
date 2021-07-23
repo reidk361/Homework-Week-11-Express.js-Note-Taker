@@ -1,4 +1,5 @@
 const fs = require('fs');
+const util = require('util');
 
 const readFromFile = util.promisify(fs.readFile);
 
@@ -12,7 +13,7 @@ const readAndAppend = (content, file) => {
     if (err) {
       console.error(err);
     } else {
-      const parsedData = JSON.parse(data);
+      parsedData = JSON.parse(data)
       parsedData.push(content);
       writeToFile(file, parsedData);
     }

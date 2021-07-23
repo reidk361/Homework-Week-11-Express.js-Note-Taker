@@ -1,3 +1,3 @@
-const { router } = require('./routes/notesRouter');
+const router = require('./notesRouter');
 
 module.exports = router;
