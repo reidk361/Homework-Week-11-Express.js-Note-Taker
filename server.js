@@ -3,7 +3,7 @@ const app = express();
 const path = require('path');
 const api = require('./routes/index.js');
 
-const PORT = 8080;
+const PORT = (process.env.PORT || 8080);
 
 // Middleware 
 app.use(express.json());
