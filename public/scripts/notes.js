@@ -44,7 +44,7 @@ const createCard = (note) => {
 };
 
 const getNotes = () =>
-  fetch(('http://localhost:8080/api/notes' || `${location.hostname}/api/notes`), {
+  fetch(('/api/notes'), {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -60,7 +60,7 @@ const getNotes = () =>
 
 
 const postNote = (note) =>
-  fetch(('http://localhost:8080/api/notes' || `${location.hostname}/api/notes`), {
+  fetch(('/api/notes'), {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
