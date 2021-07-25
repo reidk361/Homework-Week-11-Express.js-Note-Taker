@@ -1,7 +1,4 @@
-const fs = require('fs');
-const util = require('util');
 const express = require('express');
-const uuid = require('./helpers/uuid');
 const app = express();
 const path = require('path');
 const api = require('./routes/index.js');

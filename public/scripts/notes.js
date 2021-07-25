@@ -29,26 +29,16 @@ function getDate() {
 
 const createCard = (note) => {
   const cardEl = document.createElement('div');
-  cardEl.classList.add('card', 'mb-3');
+  cardEl.classList.add('card','shadow-sm');
   cardEl.setAttribute('key', note.note_id);
-
-  const cardHeaderEl = document.createElement('h4');
-  cardHeaderEl.classList.add(
-    'card-header',
-    'bg-primary',
-    'text-light',
-    'p-2',
-    'm-0'
-  );
-  cardHeaderEl.innerHTML = `${note.title} </br>`;
-
-  const cardBodyEl = document.createElement('div');
-  cardBodyEl.classList.add('card-body', 'bg-light', 'p-2');
-  cardBodyEl.innerHTML = `<h5>${note.date}</h5><hr><p>${note.text}</p>`;
-
-  cardEl.appendChild(cardHeaderEl);
-  cardEl.appendChild(cardBodyEl);
-
+  cardEl.innerHTML = (`<div class="card-header">
+    ${note.title}
+  </div>
+  <div class="card-body">
+    <h5>${note.date}</h5>
+    <hr>
+    <p class="card-text">${note.text}</p>
+  </div>`)
   notesContainer.appendChild(cardEl);
 };
 

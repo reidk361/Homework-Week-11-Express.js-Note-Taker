@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-    console.info(`${req.method} request received to add a note`);
+    console.info(`${req.method} request received to add a note.`);
   
     const { title, text } = req.body;
   
