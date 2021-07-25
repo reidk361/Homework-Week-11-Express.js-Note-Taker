@@ -35,9 +35,10 @@ const createCard = (note) => {
     ${note.title}
   </div>
   <div class="card-body">
-    <h5>${note.date}</h5>
-    <hr>
     <p class="card-text">${note.text}</p>
+  </div>
+  <div class="card-footer">
+    ${note.date}
   </div>`)
   notesContainer.appendChild(cardEl);
 };

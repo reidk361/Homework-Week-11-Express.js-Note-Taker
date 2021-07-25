@@ -1,0 +1,44 @@
+body {
+    background-image:linear-gradient(
+    to bottom right,
+    rgb(6,22,52) 0%,
+    rgb(16,45,103) 33%,
+    rgb(26,67,154) 66%,
+    rgb(36,89,205) 100%
+    );    
+}
+
+header{
+    padding-top: 20px
+}
+
+header, .card-header, .card-footer, #intro {
+    text-align: center;
+}
+
+.card-header, .card-footer {
+    background-color: rgb(78,140,255);
+}
+
+header, .card-header, .form-label{
+    font-family: 'Carter One', cursive;
+}
+
+header, .form-label{
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; 
+}
+
+.card{
+    margin: 10px;
+}
+
+.form-control, .card-body {
+    background-color: rgb(209,226,255);
+}
+
+.form-control, .card {
+    border: 1px solid rgb(6,22,52);
+}
+
+/* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
