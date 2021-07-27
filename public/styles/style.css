@@ -16,6 +16,16 @@ header, .card-header, .card-footer, #intro {
     text-align: center;
 }
 
+.card {
+    position: relative;
+}
+
+.btn-danger {
+    left: 75%;
+    top: 5%;
+    position: absolute;
+}
+
 .card-header, .card-footer {
     background-color: rgb(78,140,255);
 }

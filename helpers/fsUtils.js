@@ -20,7 +20,19 @@ const readAndAppend = (content, file) => {
   });
 };
 
+const readAndOverwrite = (content, file) => {
+  fs.readFile(file, 'utf8', (err, data) => {
+    if (err) {
+      console.error(err);
+    } else {
+      parsedData = JSON.parse(data)
+      writeToFile(file, content);
+    }
+  });
+};
+
 module.exports = { 
     readFromFile, 
-    readAndAppend
+    readAndAppend,
+    readAndOverwrite
 }

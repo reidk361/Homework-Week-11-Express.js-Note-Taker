@@ -33,6 +33,13 @@ const createCard = (note) => {
   cardEl.setAttribute('key', note.note_id);
   cardEl.innerHTML = (`<div class="card-header">
     ${note.title}
+    <br />
+    <br />
+    <button type="button" class="btn btn-danger">
+      <span class="material-icons md-36" id="delete-button">
+        delete
+      </span>
+    </button>
   </div>
   <div class="card-body">
     <p class="card-text">${note.text}</p>
@@ -41,7 +48,15 @@ const createCard = (note) => {
     ${note.date}
   </div>`)
   notesContainer.appendChild(cardEl);
+  handleDeleteButton();
 };
+
+const handleDeleteButton = () => {
+  let deleteButton = (document.querySelectorAll("#delete-button"));
+  for (let i = 0; i < deleteButton.length; i++) {
+    deleteButton[i].addEventListener('click', deleteNote);
+  }
+}
 
 const getNotes = () =>
   fetch(('/api/notes'), {
@@ -78,6 +93,19 @@ const postNote = (note) =>
   )
 ;
 
+const deleteNote = () => {
+  fetch(`/api/notes/${event.target.parentNode.parentNode.parentNode.getAttribute('key')}`, {
+    method: 'DELETE'
+  })
+  .then((response) => response.json())
+  .then((data) => {
+    alert(data);
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+  });
+}
+
 getNotes().then((data) => {
   console.log(data);
   data.forEach((note) => createCard(note))
@@ -96,6 +124,7 @@ const handleNoteSubmit = (event) => {
   postNote(newNote);
   noteTitle.value = "";
   noteText.value = "";
+  location.reload();
 };
 
 // Listen for when the form is submitted
