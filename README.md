@@ -3,7 +3,7 @@
 
 ### The function of this app is to be able to take notes and place them on the page using GET and POST requests. 
 
-### A live example can be accessed [here.](https://git.heroku.com/homework-week-11.git)
+### A live example can be accessed [here.](https://homework-week-11.herokuapp.com/)
 <br />
 
 > **1920p width screen example.**   
